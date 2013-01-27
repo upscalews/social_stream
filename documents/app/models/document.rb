@@ -1,9 +1,11 @@
 class Document < ActiveRecord::Base
   include SocialStream::Models::Object
 
+  file_upload_path = "#{SocialStream::Documents.upload_path}documents/:class/:id_partition/:style:filename.:extension"
+
   has_attached_file :file, 
                     :url => '/:class/:id.:content_type_extension',
-                    :path => ':rails_root/documents/:class/:id_partition/:style/:filename.:extension'
+                    :path => file_upload_path
 
   paginates_per 20
   

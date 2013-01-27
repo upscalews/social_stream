@@ -8,6 +8,9 @@ module SocialStream
   end
 
   module Documents
+    mattr_accessor :upload_path
+    @@upload_path = 'rails_root:/'
+
     # Picture thumbnails
     mattr_accessor :picture_styles
     @@picture_styles = {

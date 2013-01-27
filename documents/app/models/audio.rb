@@ -1,7 +1,9 @@
 class Audio < Document  
+  file_upload_path = "#{SocialStream::Documents.upload_path}documents/:class/:id_partition/:style" 
+
   has_attached_file :file, 
                     :url => '/:class/:id.:content_type_extension',
-                    :path => ':rails_root/documents/:class/:id_partition/:style',
+                    :path => file_upload_path,
                     :styles => SocialStream::Documents.audio_styles,
                     :processors => [ :ffmpeg, :waveform ]
   
