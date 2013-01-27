@@ -72,7 +72,7 @@ module SocialStream
 
 
   mattr_accessor :subjects
-  @@subjects = [ :user, :group, :site ]
+  @@subjects = [ :user, :group ]
 
   mattr_accessor :devise_modules
   @@devise_modules = [ :database_authenticatable, :registerable, :recoverable,
