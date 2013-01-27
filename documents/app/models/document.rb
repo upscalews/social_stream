@@ -11,6 +11,9 @@ class Document < ActiveRecord::Base
   
   validates_attachment_presence :file
   validates_presence_of :title
+  validates_attachment_size :file, :less_than => SocialStream::Documents.max_file_upload_size , :message => 'thats image was too big. please pick a smaller one'
+  validates_attachment_content_type :file, :content_type => SocialStream::Documents.accepted_types , :message => 'only images are allowed' if SocialStream::Documents.accepted_types.present?
+
   
   before_validation(:on => :create) do
     set_title

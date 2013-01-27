@@ -8,6 +8,12 @@ module SocialStream
   end
 
   module Documents
+    mattr_accessor :accepted_types 
+    @@accepted_types = nil #nil for default to allow all types
+
+    mattr_accessor :max_file_upload_size 
+    @@max_file_upload_size = 5.megabytes
+
     mattr_accessor :upload_path
     @@upload_path = 'rails_root:/'
 
