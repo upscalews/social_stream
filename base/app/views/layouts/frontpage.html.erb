@@ -8,7 +8,6 @@
     <meta name="description" content= "<%= yield(:description).empty? ? "Home" : yield(:description) %>" >
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
-    <%= favicon_link_tag "icons/favicon.ico" %>
 
     <% if protect_against_forgery? %>
       <%= csrf_meta_tag %>
