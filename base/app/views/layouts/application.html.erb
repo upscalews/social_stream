@@ -47,16 +47,20 @@
         <%= yield %>
       </section>
   
-      <% if content_for?(:sidebar) %>
-        <aside id="sidebar">
+      <aside id="sidebar">
+
+        <% if content_for?(:sidebar) %>
           <div id="sidebarContent">
             <%= yield :sidebar %>
           </div>
-        </aside>
-      <% end %>
+        <% end %>
+
+       </aside>
+
     </div>
     
-    <footer class="footer"><%= render :partial => "layouts/footer" %>
+    <footer class="footer">
+      <%= render :partial => "layouts/footer" %>
     </footer>
 
   </body>
