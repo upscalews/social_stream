@@ -65,7 +65,7 @@ module SocialStream
 
       # Raise error if {#profile_subject} is not provided
       def profile_subject!
-        profile_subject || warden.authenticate!
+        profile_subject || authenticate_user! 
       end
 
       # Returns the {SocialStream::Models::Subject subject} that is in the path, or
@@ -79,7 +79,7 @@ module SocialStream
       # This method tries {#profile_or_current_subject} but tries to
       # authenticate if the user is not logged in
       def profile_or_current_subject!
-        profile_or_current_subject || warden.authenticate!
+        profile_or_current_subject || authenticate_user!
       end
 
       # A {User} must be logged in and is equal to {#profile_subject}
