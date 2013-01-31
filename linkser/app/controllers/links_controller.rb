@@ -12,6 +12,6 @@ class LinksController < ApplicationController
   private
 
   def allowed_params
-    [:url]
+    [:url, :callback_url, :image]
   end
 end
