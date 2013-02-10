@@ -4,12 +4,14 @@
 
     <!-- FIXME: search javascript functionality in 'layouts/search' -->
  
-    <%= form_tag search_path, method: 'get', class: "navbar-search pull-left" do %>
+    <%= form_tag search_path, method: 'get', class: "navbar-search pull-left", id:"search_form" do %>
       <%= text_field_tag :q, nil, autocomplete: :off, class: 'search-query', placeholder: t('search.name') %>
     <% end %>
-
+  
+    <div id="explore_link" >
     <%= link_to(raw("<i class='icon_navbar-home'></i> "), explore_path)%>
     or explore
+    </div>
 
      <ul class="nav pull-right">
       <li>
